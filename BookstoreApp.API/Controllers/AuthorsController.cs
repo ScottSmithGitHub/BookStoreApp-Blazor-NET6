@@ -41,8 +41,7 @@ namespace BookstoreApp.API.Controllers
             {
                 _logger.LogError(ex, $"Error Performing GET: {nameof(GetAuthors)}");
                 return StatusCode(500, Messages.Error500Message);
-            }
-            
+            }            
         }
 
         // GET: api/Authors/5
@@ -60,6 +59,7 @@ namespace BookstoreApp.API.Controllers
                 }
 
                 var authorDto = _mapper.Map<AuthorReadOnlyDto>(author);
+
                 return Ok(authorDto);
             }
             catch (Exception ex)
